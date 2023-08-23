@@ -5,6 +5,10 @@ import ImageList from './ImageList'
 class App extends React.Component {
 
     state = {images: []}
+
+    componentDidMount(){
+      this.onSearchSubmit('white flowers');
+  }
      onSearchSubmit = async (term) =>{
       const response = await unsplash.get('/search/photos',{
         params:{query: term},
@@ -26,4 +30,4 @@ class App extends React.Component {
   
 }
 
-export default App
+export default App;
